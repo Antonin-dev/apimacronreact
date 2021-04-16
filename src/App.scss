@@ -1,0 +1,248 @@
+// ---------------------Variable--------------------------
+
+$color1: #00fdfd;
+$color2: #00fd76;
+$color3: #006efd;
+$color4: #8300fd;
+$color5: #fd5000;
+$color6: #f9fd00;
+$color7: #fd0000;
+$color8: #926565;
+$color9: #322c3b;
+
+$mobile: 700px;
+$desktop : 1000px;
+
+// ------------------------Mixin--------------------------
+
+
+
+// ------------------------Base---------------------------
+
+// *, ::before, ::after{
+    
+// }
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    script{
+    display: none;
+  }
+}
+
+body * {
+  box-sizing: border-box;;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+
+// ------------------------Mobile-------------------------
+
+.App{
+
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    background-color: $color4;
+
+    .Navbar{
+        background-color: $color1;
+        width: 100%;
+        height: 50px;
+
+        .item-navbar{
+            height: 100%;
+            border: black solid 1px;
+        }
+    }
+    
+    .Container{
+        background-color: $color2;
+        width: 100%;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;  
+        
+        .scroll{
+            height: auto;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+           
+            .Banner{
+                width: 80%;
+                height: 350px;
+                justify-content: center;
+                align-items: center;
+                background: url(https://www.leparisien.fr/resizer/aYJPXWcJKkBkZBsXTLx3B2OAH60=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/DDCRQVRBMBCZLM7QIPRJECIUKE.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: right;
+                
+            }
+
+            .CardList{
+                background-color: $color4;
+                width: 80%;
+                height: 100%;
+
+                .scroll-2{
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: space-around;
+
+                    .Bloc{
+                        background-color: $color5;
+                        width: 100%;
+                        height: 350px;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border: solid black 2px;
+
+                        .img-card{
+                            width: 260px;
+                        }
+
+                        .text-card{
+                            flex-direction: column;
+                            justify-content: center;
+                            align-self: center;
+
+                            h2, p{
+                                display: unset;
+                                text-align: center;
+                            }
+                        }
+                       
+                    }
+                }   
+            }
+        }
+    
+    }
+    
+    .footer{
+        background-color: $color7;
+        width: 100%;
+        height: 50px;
+    }
+}
+
+//---------------------------------- Version tablette ----------------------- 
+
+@media screen and (min-width: 700px) {
+
+    .App{
+        .Container{
+            
+            .scroll{
+                height: 100%;
+                justify-content: flex-start;
+                .Banner{
+                    min-height: 200px;
+                    height: 100%;
+                    background: url(https://www.leparisien.fr/resizer/aYJPXWcJKkBkZBsXTLx3B2OAH60=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/DDCRQVRBMBCZLM7QIPRJECIUKE.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position-x: 100%;
+                    background-position-y: 10%;
+                   
+                }
+                .CardList{
+                    align-items: center;
+                    height: auto;
+                    overflow-y: unset; 
+                    .scroll-2{
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 100%;
+                        flex-wrap: wrap;
+                
+                        .Bloc{
+                            width: 49%;
+                            height: 400px;
+
+
+                            .img-card{
+                                width: 160px;
+                            }
+
+                            .text-card{
+                                flex-direction: column;
+                                justify-content: space-around;
+                                align-self: center;
+                            }
+                            
+                            
+                        }
+                    }
+                }
+            }         
+        }
+    }  
+}
+
+// --------------------------------VERSION ORDINATEUR----------------------------------
+
+
+@media screen and (min-width: 1000px) {
+
+    .App{
+        .Container{
+            overflow: hidden;
+            //overflow-y: unset;
+            //flex: 1;
+            .scroll{
+                flex-direction: row;
+                .Banner{
+                    height: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    background: url(https://www.leparisien.fr/resizer/aYJPXWcJKkBkZBsXTLx3B2OAH60=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/DDCRQVRBMBCZLM7QIPRJECIUKE.jpg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                }
+                .CardList{
+                    align-items: center;
+                    height: 100%;
+                    overflow-y: auto;
+                    .scroll-2{
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        
+                        flex-wrap: wrap;
+                
+                        .Bloc{
+                            width: 100%;
+                            height: 250px;
+                            justify-content: flex-start;
+                            flex-direction: row;
+
+                            .img-card{
+                                width: 250px;
+                            }
+
+                            .text-card{
+                                flex-direction: column;
+                                justify-content: space-around;
+                                align-self: center;
+                            }
+                            
+                        }
+                    }
+                }
+            }         
+        }
+    }  
+}
+
